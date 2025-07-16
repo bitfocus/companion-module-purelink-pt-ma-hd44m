@@ -1,3 +1,3 @@
-## Your module
+# PureLink - PT-MA-HD44M
 
-Write some help for your users here!
+Companion module to control PureLink PureTools PT-MA-HD44M video matrix
