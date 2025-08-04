@@ -1,15 +1,15 @@
-const { InstanceBase, combineRgb } = require('@companion-module/base');
+const { InstanceBase, combineRgb } = require('@companion-module/base')
 
 module.exports = {
 	getFeedbacks() {
-		const feedbacks = {};
-		
+		const feedbacks = {}
+
 		feedbacks.crosspoint_status = {
 			name: 'Crosspoint Status',
 			type: 'boolean',
 			label: 'Crosspoint Status',
 			defaultStyle: {
-				bgcolor: combineRgb(255, 0, 0)
+				bgcolor: combineRgb(255, 0, 0),
 			},
 			options: [
 				{
@@ -17,28 +17,28 @@ module.exports = {
 					type: 'dropdown',
 					label: 'OUTPUT',
 					choices: this.getOutputsList(false),
-					default: this.getFirstOutID(false)
+					default: this.getFirstOutID(false),
 				},
 				{
 					id: 'xpt',
 					type: 'dropdown',
 					label: 'INPUT',
 					choices: this.getInputsList(false),
-					default: this.getFirstIptID(false)
-				}
+					default: this.getFirstIptID(false),
+				},
 			],
 			callback: (feedback) => {
-				var out = this.getOutByID( feedback.options.outID );
-				return out.xpt == feedback.options.xpt;
-			}
-		};
-		
+				var out = this.getOutByID(feedback.options.outID)
+				return out.xpt == feedback.options.xpt
+			},
+		}
+
 		feedbacks.last_pst = {
 			name: 'Last Recalled Preset',
 			type: 'boolean',
 			label: 'Last Recalled Preset',
 			defaultStyle: {
-				bgcolor: combineRgb(255, 0, 0)
+				bgcolor: combineRgb(255, 0, 0),
 			},
 			options: [
 				{
@@ -46,25 +46,27 @@ module.exports = {
 					type: 'dropdown',
 					label: 'PRESET',
 					choices: this.getPresetsList(),
-					default: this.getFirstPstID()
-				}
+					default: this.getFirstPstID(),
+				},
 			],
-			callback: (feedback) => { return feedback.options.pst == this.getLastPstID(); }
-		};
-		
+			callback: (feedback) => {
+				return feedback.options.pst == this.getLastPstID()
+			},
+		}
+
 		feedbacks.connect_status = {
 			name: 'Connection Status',
 			type: 'boolean',
 			label: 'Matrix connection status',
 			defaultStyle: {
-				color: combineRgb(255, 255, 255)
+				color: combineRgb(255, 255, 255),
 			},
 			options: [],
 			callback: (feedback) => {
-				return this.getVariableValue('connect_status') == 'ok';
-			}
-		};
-		
-		return feedbacks;
-	}
-};
+				return this.getVariableValue('connect_status') == 'ok'
+			},
+		}
+
+		return feedbacks
+	},
+}

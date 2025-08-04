@@ -21,10 +21,6 @@
 	},
 	"legacyIds": [],
 	"manufacturer": "purelink",
-	"products": [
-		"PT-MA-HD44M"
-	],
-	"keywords": [
-		"Video Matrix"
-	]
+	"products": ["PT-MA-HD44M"],
+	"keywords": ["Video Matrix"]
 }

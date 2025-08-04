@@ -11,7 +11,8 @@
 		"url": "git+https://github.com/bitfocus/companion-module-purelink-pt-ma-hd44m.git"
 	},
 	"dependencies": {
-		"@companion-module/base": "~1.4.0"
+		"@companion-module/base": "~1.4.0",
+		"prettier": "^3.6.2"
 	},
 	"devDependencies": {
 		"@companion-module/tools": "^1.3.2"
